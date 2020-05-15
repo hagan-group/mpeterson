@@ -37,6 +37,9 @@ def main():
     cwd = Path.cwd()
     install_path = args.path.expanduser().resolve()
 
+    if not install_path.is_dir():
+        install_path.mkdir()
+
     if not args.scripts:
         scripts = [
             cwd/"make-movie-grid.py",
