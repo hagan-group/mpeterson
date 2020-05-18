@@ -50,7 +50,7 @@ args = parser.parse_args()
 MOVIES = [movie.expanduser().resolve() for movie in args.movies]
 NROWS = args.shape[0]
 NCOLS = args.shape[1]
-CLIP = int(args.clip)
+CLIP = int(args.clip_length)
 OUTPUT = args.output.expanduser().resolve()
 
 assert(len(MOVIES) == NROWS * NCOLS)
