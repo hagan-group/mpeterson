@@ -41,10 +41,7 @@ def main():
         install_path.mkdir()
 
     if not args.scripts:
-        scripts = [
-            cwd/"make-movie-grid.py",
-            cwd/"rename.py"
-        ]
+        scripts = [script for script in cwd.glob("*.py") if script.name != "install.py"]
     else:
         for script in args.scripts:
             path = (cwd / script).with_suffix('.py')
